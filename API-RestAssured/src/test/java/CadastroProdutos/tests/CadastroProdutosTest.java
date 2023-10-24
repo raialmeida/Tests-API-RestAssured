@@ -4,7 +4,6 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import CadastroProdutos.payloads.CadastroProdutoPayloads;
 import CadastroProdutos.requests.CadastroProdutoRequests;
@@ -19,7 +18,6 @@ public class CadastroProdutosTest extends TestConfig {
 	}
 
 	@Test
-	@Tag("usuario")
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();

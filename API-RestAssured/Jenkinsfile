@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+	options {
+        ansiColor('sterm')
+        timeout(time: 20, unit: 'MINUTES')
+    }
+    
+    stages {
+        stage('Build') {
+            steps {      
+                // Clean before build
+                cleanWs( deleteDirs: true, disableDeferredWipeout: true)
+                // We need to explicitly checkout from SCM here
+                checkout scm
+                sh 'docker-compose build'
+            }
+        }
+
+        stage('Test and Report') {
+            steps {
+                echo 'running tests'
+                sh 'docker-compose run --rm api-test mvn test'
+            }
+        }
+    }
+
+    post {
+        always{
+                   echo 'Testes OK'
+      	}
+    }
+}

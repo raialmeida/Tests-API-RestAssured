@@ -4,8 +4,8 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
 import CadastroProdutos.payloads.CadastroProdutoPayloads;
 import CadastroProdutos.requests.CadastroProdutoRequests;
 import Config.TestConfig;
@@ -19,7 +19,8 @@ public class CadastroProdutosTest extends TestConfig {
 	}
 
 	@Test
-	@DisplayName("Validar cadastro de produtos da rota POST /produtos")
+	@Tag("usuario")
+	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
 		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().body("message",
@@ -27,7 +28,7 @@ public class CadastroProdutosTest extends TestConfig {
 	}
 
 	@Test
-	@DisplayName("Validar status code da rota POST /produtos")
+	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
 		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().statusCode(201);

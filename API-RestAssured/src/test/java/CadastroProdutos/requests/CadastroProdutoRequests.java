@@ -1,13 +1,13 @@
 package CadastroProdutos.requests;
 
-import Utils.TokenUsuario;
+import Utils.UtilsUsuario;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class CadastroProdutoRequests {
 
-	static String token = TokenUsuario.getToken();
+	static String token = UtilsUsuario.getToken();
 
 	/**
 	 * Request POST cadastro de produtos

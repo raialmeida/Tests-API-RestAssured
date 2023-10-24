@@ -9,6 +9,3 @@ COPY pom.xml .
 
 # Copie o código de teste para o contêiner
 COPY src ./src
-
-# o comando para baixar e instalar as dependências
-RUN mvn package

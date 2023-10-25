@@ -13,7 +13,7 @@ pipeline {
                 cleanWs( deleteDirs: true, disableDeferredWipeout: true)
                 // We need to explicitly checkout from SCM here
                 checkout scm
-                sh 'mkdir -p ./allure-results'
+                sh 'mkdir -p ./API-RestAssured/allure-results'
                 sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
             }
         }
@@ -33,7 +33,7 @@ pipeline {
                                 includeProperties: false, 
                                 jdk: '', 
                                 reportBuildPolicy: 'ALWAYS',
-                                results: [[path: 'allure-results']],
+                                results: [[path: 'API-RestAssured/allure-results']],
                                 report: 'allure-report'
                         ])
                     }

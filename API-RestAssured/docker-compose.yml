@@ -5,4 +5,4 @@ services:
     image: test-api-restassured
     build: .
     volumes:
-      - ./API-RestAssured/allure-results:/app/API-RestAssured/allure-results
+      - ./allure-results:/app/API-RestAssured/allure-results

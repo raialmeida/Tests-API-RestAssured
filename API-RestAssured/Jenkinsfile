@@ -13,6 +13,7 @@ pipeline {
                 cleanWs( deleteDirs: true, disableDeferredWipeout: true)
                 // We need to explicitly checkout from SCM here
                 checkout scm
+                sh 'mkdir -p ./allure-results'
                 sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
             }
         }

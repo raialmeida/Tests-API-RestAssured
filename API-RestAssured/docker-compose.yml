@@ -6,3 +6,5 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+         volumes:
+         - ./allure-results:/app/allure-results

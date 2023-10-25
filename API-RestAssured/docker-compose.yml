@@ -3,6 +3,6 @@ version: '3'
 services:
    api-test:
       image: test-api-restassured
-      build: .
-      volumes:
-      - ./app:/app
+      build:
+         context: .
+         dockerfile: Dockerfile

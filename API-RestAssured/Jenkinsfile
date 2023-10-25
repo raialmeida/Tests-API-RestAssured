@@ -13,14 +13,14 @@ pipeline {
                 cleanWs( deleteDirs: true, disableDeferredWipeout: true)
                 // We need to explicitly checkout from SCM here
                 checkout scm
-                sh 'docker-compose build'
+                sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
             }
         }
 
         stage('Test and Report') {
             steps {
                 echo 'running tests'
-                sh 'docker-compose run --rm api-test mvn test'
+                sh 'docker-compose -f API-RestAssured/docker-compose.yml run --rm api-test mvn test'
             }
         }
     }

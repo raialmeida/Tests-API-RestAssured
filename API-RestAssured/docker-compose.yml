@@ -1,11 +1,8 @@
 version: '3'
 
 services:
-   api-test:
-      image: test-api-restassured
-      build:
-         context: .
-         dockerfile: Dockerfile
-         volumes:
-           - ./API-RestAssured/allure-results:/app/allure-results
-           
+  api-test:
+    image: test-api-restassured
+    build: .
+    volumes:
+      - ./API-RestAssured/allure-results:/app/allure-results

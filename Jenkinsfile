@@ -8,18 +8,20 @@ pipeline {
     
     stages {
         stage('Build') {
-            steps {      
+            steps { 
+                 // Clean before build
+                cleanWs()     
                 // We need to explicitly checkout from SCM here
                 checkout scm
                 sh 'mkdir -p ./allure-results'
-                sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
+                sh 'docker-compose build'
             }
         }
 
         stage('Test and Report') {
             steps {
                 echo 'running tests'
-                sh 'docker-compose -f API-RestAssured/docker-compose.yml run --rm api-test mvn test'
+                sh 'docker-compose run --rm api-test mvn test'
             }
         }
     }

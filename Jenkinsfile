@@ -11,7 +11,7 @@ pipeline {
             steps {      
                 // We need to explicitly checkout from SCM here
                 checkout scm
-                sh 'mkdir -p ./API-RestAssured/allure-results'
+                sh 'mkdir -p ./allure-results'
                 sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
             }
         }
@@ -32,8 +32,8 @@ pipeline {
                                 includeProperties: false, 
                                 jdk: '', 
                                 reportBuildPolicy: 'ALWAYS',
-                                results: [[path: 'API-RestAssured/allure-results']],
-                                report: 'API-RestAssured/allure-report'
+                                results: [[path: 'allure-results']],
+                                report: 'allure-report'
                         ])
                     }
             } 

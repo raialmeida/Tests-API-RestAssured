@@ -39,6 +39,12 @@ mvn test
 mvn allure:serve
 ```
 
+4. Para executar os testes no container docker, utilize o seguinte comando:
+
+```
+docker-compose -f API-RestAssured/docker-compose.yml run --rm api-test mvn test
+```
+
 _Obs:. Poderá executar os testes via JUnit conforme sua IDE_
 ## Estrutura do Projeto
 

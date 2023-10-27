@@ -8,18 +8,20 @@ pipeline {
     
     stages {
         stage('Build') {
-            steps {      
+            steps { 
+                 // Clean before build
+                cleanWs()     
                 // We need to explicitly checkout from SCM here
                 checkout scm
-                sh 'mkdir -p ./API-RestAssured/allure-results'
-                sh 'docker-compose -f API-RestAssured/docker-compose.yml build'
+                sh 'mkdir -p ./allure-results'
+                sh 'docker-compose build'
             }
         }
 
         stage('Test and Report') {
             steps {
                 echo 'running tests'
-                sh 'docker-compose -f API-RestAssured/docker-compose.yml run --rm api-test mvn test'
+                sh 'docker-compose run --rm api-test mvn test'
             }
         }
     }
@@ -32,8 +34,8 @@ pipeline {
                                 includeProperties: false, 
                                 jdk: '', 
                                 reportBuildPolicy: 'ALWAYS',
-                                results: [[path: 'API-RestAssured/allure-results']],
-                                report: 'API-RestAssured/allure-report'
+                                results: [[path: 'allure-results']],
+                                report: 'allure-report'
                         ])
                     }
             } 

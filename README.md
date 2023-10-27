@@ -17,32 +17,28 @@ Antes de começar, certifique-se de ter o seguinte instalado:
 
 ## Uso
 
-1. Navegue até o diretório do projeto:
 
-```
-/API-RestAssured
-```
-3. Para instalar no repositório local, utilize o seguinte comando:
+1. Para instalar no repositório local, utilize o seguinte comando:
 
 ```
 mvn install
 ```
-2. Para executar os testes, utilize o seguinte comando:
+3. Para executar os testes, utilize o seguinte comando:
 
 ```
 mvn test
 ```
 
-3. Para executar o Allure Report, utilize o seguinte comando:
+4. Para executar o Allure Report, utilize o seguinte comando:
 
 ```
 mvn allure:serve
 ```
 
-4. Para executar os testes no container docker, utilize o seguinte comando:
+5. Para executar os testes no container docker, utilize o seguinte comando:
 
 ```
-docker-compose -f API-RestAssured/docker-compose.yml run --rm api-test mvn test
+docker-compose run --rm api-test mvn test
 ```
 
 _Obs:. Poderá executar os testes via JUnit conforme sua IDE_

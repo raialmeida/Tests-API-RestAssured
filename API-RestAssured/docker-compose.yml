@@ -6,3 +6,5 @@ services:
     build: .
     volumes:
       - ./allure-results:/app/target/allure-results
+      - ./target/surefire-reports:/app/target/surefire-reports
+      

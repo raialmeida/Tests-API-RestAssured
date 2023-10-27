@@ -1,4 +1,13 @@
-/target/
-.settings
-/allure-results
+# Arquivos de compilação
+target/
+
+# Arquivos de projeto
+.idea/
+.classpath
+.project
+allure-results
 .allure
+.settings/
+
+# Arquivos de log
+*.log

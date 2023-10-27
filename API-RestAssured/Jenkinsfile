@@ -9,8 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {      
-                // Clean before build
-                cleanWs( deleteDirs: true, disableDeferredWipeout: true)
                 // We need to explicitly checkout from SCM here
                 checkout scm
                 sh 'mkdir -p ./API-RestAssured/allure-results'

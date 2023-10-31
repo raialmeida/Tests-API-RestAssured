@@ -8,7 +8,7 @@ public class TestConfig {
 
 	@BeforeAll
 	public static void setup() {
-		baseURI = "https://serverest.dev";
+		baseURI = System.getProperty("baseURI");
 		UtilsUsuario.cadastrarUsuario();
 	}
 }

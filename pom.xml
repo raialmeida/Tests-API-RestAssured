@@ -11,6 +11,30 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>hml</id>
+			<properties>
+				<baseURI>https://serverest.hml</baseURI>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<baseURI>https://serverest.dev</baseURI>
+			</properties>
+		</profile>
+		<profile>
+			<id>staging</id>
+			<properties>
+				<baseURI>https://serverest.staging</baseURI>
+			</properties>
+		</profile>
+	</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -78,6 +102,7 @@
 						<include>**/*Test.java</include>
 					</includes>
 					<systemPropertyVariables>
+						<baseURI>${baseURI}</baseURI>
 						<allure.results.directory>
 							${project.build.directory}/allure-results</allure.results.directory>
 					</systemPropertyVariables>

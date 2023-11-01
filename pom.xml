@@ -15,7 +15,7 @@
 		<profile>
 			<id>hml</id>
 			<properties>
-				<baseURI>https://serverest.hml</baseURI>
+				<env>src/test/resources/hml.properties</env>
 			</properties>
 		</profile>
 		<profile>
@@ -24,13 +24,13 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<baseURI>https://serverest.dev</baseURI>
+				<env>src/test/resources/dev.properties</env>
 			</properties>
 		</profile>
 		<profile>
 			<id>staging</id>
 			<properties>
-				<baseURI>https://serverest.staging</baseURI>
+				<env>src/test/resources/staging.properties</env>
 			</properties>
 		</profile>
 	</profiles>
@@ -92,6 +92,24 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${env}</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

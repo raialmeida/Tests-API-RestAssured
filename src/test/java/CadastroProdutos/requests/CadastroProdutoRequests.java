@@ -15,7 +15,7 @@ public class CadastroProdutoRequests {
 	 * @param payload
 	 * @return response
 	 */
-	public static Response RequestCadastroProdutosPost(String payload) {
+	public static Response requestCadastroProdutosPost(String payload) {
 		return RestAssured.given().contentType(ContentType.JSON).header("Authorization", token).body(payload).post();
 	}
 }

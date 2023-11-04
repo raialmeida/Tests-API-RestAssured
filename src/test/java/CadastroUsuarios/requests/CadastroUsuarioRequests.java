@@ -11,7 +11,7 @@ public class CadastroUsuarioRequests {
 	 * @param payload
 	 * @return Response da request
 	 */
-	public static Response RequestCadastroPost(String payload) {
+	public static Response requestCadastroPost(String payload) {
 		return RestAssured.given().contentType(ContentType.JSON).body(payload).post();
 	}
 }

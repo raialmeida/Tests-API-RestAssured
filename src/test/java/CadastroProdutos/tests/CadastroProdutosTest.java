@@ -21,7 +21,7 @@ public class CadastroProdutosTest extends TestConfig {
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
-		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().body("message",
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then().log().all().assertThat().body("message",
 				equalTo("Cadastro realizado com sucesso"));
 	}
 
@@ -29,6 +29,6 @@ public class CadastroProdutosTest extends TestConfig {
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
-		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().statusCode(201);
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then().log().all().assertThat().statusCode(201);
 	}
 }

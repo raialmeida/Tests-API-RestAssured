@@ -5,12 +5,12 @@ pipeline {
         ansiColor('xterm')
         timeout(time: 20, unit: 'MINUTES')
     }
-    
+
     stages {
         stage('Build') {
-            steps { 
-                 // Clean before build
-                cleanWs()     
+            steps {
+                // Clean before build
+                cleanWs()
                 // We need to explicitly checkout from SCM here
                 checkout scm
                 sh 'mkdir -p ./allure-results'
@@ -27,17 +27,17 @@ pipeline {
     }
 
     post {
-        always{
+        always {
                 junit '**/target/surefire-reports/*.xml'
-                script{
+                script {
                         allure([
-                                includeProperties: false, 
-                                jdk: '', 
+                                includeProperties: false,
+                                jdk: '',
                                 reportBuildPolicy: 'ALWAYS',
                                 results: [[path: 'allure-results']],
                                 report: 'allure-report'
                         ])
-                    }
-            } 
+                }
+        }
     }
 }

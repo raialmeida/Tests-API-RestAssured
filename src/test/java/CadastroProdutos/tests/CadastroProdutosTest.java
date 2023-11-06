@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import CadastroProdutos.payloads.CadastroProdutoPayloads;
 import CadastroProdutos.requests.CadastroProdutoRequests;
 import Config.TestConfig;
+import Utils.SchemaValidator;
 
 @DisplayName("Testes da rota POST /produtos")
 public class CadastroProdutosTest extends TestConfig {
@@ -21,14 +22,24 @@ public class CadastroProdutosTest extends TestConfig {
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
-		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().body("message",
-				equalTo("Cadastro realizado com sucesso"));
+		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all()
+				.assertThat().body("message", equalTo("Cadastro realizado com sucesso"));
 	}
 
 	@Test
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroProduto() {
 		String payload = CadastroProdutoPayloads.payload();
-		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all().assertThat().statusCode(201);
+		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all()
+				.assertThat().statusCode(201);
+	}
+
+	@Test
+	@DisplayName("Validar schema json response cadastro de produtos")
+	public void validarJsonSchemaCadastroProduto() {
+		String schemaPath = "src/test/java/CadastroProdutos/schema/SchemaCadastroProduto.json";
+		String payload = CadastroProdutoPayloads.payload();
+		CadastroProdutoRequests.RequestCadastroProdutosPost(payload).then().log().all()
+				.body(SchemaValidator.matchesSchema(schemaPath));
 	}
 }

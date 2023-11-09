@@ -10,8 +10,8 @@ public class SchemaValidator {
      * @param schemaFilePath Caminho do arquivo com schema
      * @return Validação do schema
      */
-    public static JsonSchemaValidator matchesSchema(String schemaFilePath){
-        File schemaFile = new File(schemaFilePath);
+    public static JsonSchemaValidator matchesSchema(String schemaFilePath) {
+        File schemaFile = new File("src/test/java/" + schemaFilePath);
         return JsonSchemaValidator.matchesJsonSchema(schemaFile);
     }
 }

@@ -17,9 +17,8 @@ public class UtilsUsuario {
 	 * @return token
 	 */
 	public static String getToken() {
-		String token = RestAssured.given().contentType(ContentType.JSON).body(usuario).basePath("/login").post()
+		return RestAssured.given().contentType(ContentType.JSON).body(usuario).basePath("/login").post()
 				.jsonPath().getString("authorization");
-		return token;
 	}
 
 	/**

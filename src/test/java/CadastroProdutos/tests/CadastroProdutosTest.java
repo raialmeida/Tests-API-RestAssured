@@ -23,14 +23,14 @@ public class CadastroProdutosTest extends TestConfig {
 	@Test
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then().log().all()
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
 				.assertThat().body("message", equalTo("Cadastro realizado com sucesso"));
 	}
 
 	@Test
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroProduto() {
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then().log().all()
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
 				.assertThat().statusCode(201);
 	}
 
@@ -38,7 +38,7 @@ public class CadastroProdutosTest extends TestConfig {
 	@DisplayName("Validar schema json response cadastro de produtos")
 	public void validarJsonSchemaCadastroProduto() {
 		String schemaPath = "CadastroProdutos/schema/SchemaCadastroProduto.json";
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then().log().all()
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
 				.body(SchemaValidator.matchesSchema(schemaPath));
 	}
 }

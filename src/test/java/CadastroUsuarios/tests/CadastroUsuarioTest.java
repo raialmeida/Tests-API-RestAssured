@@ -20,6 +20,6 @@ public class CadastroUsuarioTest extends TestConfig {
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroUsuarios() {
 		String payload = CadastroUsuarioPayloads.payload();
-		CadastroUsuarioRequests.requestCadastroPost(payload).then().log().all().assertThat().statusCode(201);
+		CadastroUsuarioRequests.requestCadastroPost(payload).then().assertThat().statusCode(201);
 	}
 }

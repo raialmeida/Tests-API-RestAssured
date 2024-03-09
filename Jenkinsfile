@@ -21,7 +21,7 @@ pipeline {
         stage('Test and Report') {
             steps {
                 echo 'running tests'
-                sh 'docker-compose run --rm api-test mvn test'
+                sh 'docker-compose run --rm api-test mvn test -ntp'
             }
         }
     }

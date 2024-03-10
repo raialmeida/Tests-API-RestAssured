@@ -1,10 +1,8 @@
 package Config;
 
 import static io.restassured.RestAssured.*;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 import org.junit.jupiter.api.BeforeAll;
+import Utils.Environment;
 import Utils.UtilsUsuario;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
@@ -21,18 +19,7 @@ public class TestConfig {
 
 	@BeforeAll
 	public static void setup() {
-		baseURI = TestConfig.getEnv("baseURI");
+		baseURI = Environment.getEnv("baseURI");
 		UtilsUsuario.cadastrarUsuario();
-	}
-
-	public static String getEnv(String key) {
-		String env = System.getProperty("env");
-		Properties properties = new Properties();
-		try (FileInputStream input = new FileInputStream(env)) {
-			properties.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return properties.getProperty(key);
 	}
 }

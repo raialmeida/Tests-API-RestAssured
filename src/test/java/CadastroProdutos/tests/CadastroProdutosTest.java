@@ -4,17 +4,17 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import CadastroProdutos.payloads.CadastroProdutoPayloads;
 import CadastroProdutos.requests.CadastroProdutoRequests;
 import Config.TestConfig;
 import Utils.SchemaValidator;
+import jakarta.json.JsonObject;
 
 @DisplayName("Testes da rota POST /produtos")
 public class CadastroProdutosTest extends TestConfig {
 
-	String payload = CadastroProdutoPayloads.payload();
+	JsonObject payload = CadastroProdutoPayloads.payload();
 
 	@BeforeEach
 	public void before() {
@@ -22,12 +22,10 @@ public class CadastroProdutosTest extends TestConfig {
 	}
 
 	@Test
-	@Tag("test")
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
-		System.out.println(payload);
-		// CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
-		// 		.assertThat().body("message", equalTo("Cadastro realizado com sucesso"));
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
+				.assertThat().body("message", equalTo("Cadastro realizado com sucesso"));
 	}
 
 	@Test

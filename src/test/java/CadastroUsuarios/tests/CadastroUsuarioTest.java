@@ -11,6 +11,8 @@ import Config.TestConfig;
 @DisplayName("Testes da rota POST /usuarios")
 public class CadastroUsuarioTest extends TestConfig {
 
+	String payload = CadastroUsuarioPayloads.payload();
+
 	@BeforeEach
 	public void before() {
 		basePath = "/usuarios";
@@ -19,7 +21,6 @@ public class CadastroUsuarioTest extends TestConfig {
 	@Test
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroUsuarios() {
-		String payload = CadastroUsuarioPayloads.payload();
 		CadastroUsuarioRequests.requestCadastroPost(payload).then().assertThat().statusCode(201);
 	}
 }

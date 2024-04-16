@@ -1,16 +1,21 @@
 package CadastroUsuarios.payloads;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.Name;
+import jakarta.json.*;
 
 public class CadastroUsuarioPayloads {
 
-	static Name name = Faker.instance().name();
+	static String name = Faker.instance().name().toString();
 	static String email = Faker.instance().internet().emailAddress();
 	static String password = Faker.instance().internet().password();
 
 	public static String payload() {
-		return "{\r\n" + "  \"nome\": \"" + name + "\"," + "  \"email\": \"" + email + "\"," + "  \"password\": \""
-				+ password + "\"," + "  \"administrador\": \"true\"\r\n" + "}";
+		JsonObject JsonObject = Json.createObjectBuilder()
+				.add("nome", name)
+				.add("email", email)
+				.add("password", password)
+				.add("administrador", "true")
+				.build();
+		return JsonObject.toString();
 	}
 }

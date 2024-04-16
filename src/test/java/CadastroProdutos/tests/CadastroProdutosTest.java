@@ -9,12 +9,11 @@ import CadastroProdutos.payloads.CadastroProdutoPayloads;
 import CadastroProdutos.requests.CadastroProdutoRequests;
 import Config.TestConfig;
 import Utils.SchemaValidator;
-import jakarta.json.JsonObject;
 
 @DisplayName("Testes da rota POST /produtos")
 public class CadastroProdutosTest extends TestConfig {
 
-	JsonObject payload = CadastroProdutoPayloads.payload();
+	String payload = CadastroProdutoPayloads.payload();
 
 	@BeforeEach
 	public void before() {

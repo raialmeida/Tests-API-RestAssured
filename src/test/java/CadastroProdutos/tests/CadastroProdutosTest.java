@@ -13,7 +13,7 @@ import Utils.SchemaValidator;
 @DisplayName("Testes da rota POST /produtos")
 public class CadastroProdutosTest extends TestConfig {
 
-	String payload = CadastroProdutoPayloads.payload();
+	String payload = CadastroProdutoPayloads.payloadCadastroProduto();
 
 	@BeforeEach
 	public void before() {

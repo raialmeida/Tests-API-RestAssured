@@ -11,7 +11,7 @@ import Config.TestConfig;
 @DisplayName("Testes da rota POST /usuarios")
 public class CadastroUsuarioTest extends TestConfig {
 
-	String payload = CadastroUsuarioPayloads.payload();
+	String payload = CadastroUsuarioPayloads.payloadCadastroUsuario();
 
 	@BeforeEach
 	public void before() {

@@ -9,13 +9,12 @@ public class CadastroUsuarioPayloads {
 	static String email = Faker.instance().internet().emailAddress();
 	static String password = Faker.instance().internet().password();
 
-	public static String payload() {
-		JsonObject JsonObject = Json.createObjectBuilder()
+	public static String payloadCadastroUsuario() {
+		return Json.createObjectBuilder()
 				.add("nome", name)
 				.add("email", email)
 				.add("password", password)
 				.add("administrador", "true")
-				.build();
-		return JsonObject.toString();
+				.build().toString();
 	}
 }

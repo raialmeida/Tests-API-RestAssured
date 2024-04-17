@@ -5,14 +5,13 @@ import com.github.javafaker.Faker;
 
 public class CadastroProdutoPayloads {
 
-	public static String payload() {
+	public static String payloadCadastroProduto() {
 		String produto = Faker.instance().commerce().productName();
-		JsonObject JsonObject = Json.createObjectBuilder()
+		return Json.createObjectBuilder()
 				.add("nome", produto)
 				.add("preco", 470)
 				.add("descricao", "Mouse")
 				.add("quantidade", "381")
-				.build();
-		return JsonObject.toString();
+				.build().toString();
 	}
 }

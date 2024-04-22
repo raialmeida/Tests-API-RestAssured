@@ -1,4 +1,4 @@
-package CadastroProdutos.payloads;
+package services.CadastroProdutos.payloads;
 
 import jakarta.json.*;
 import com.github.javafaker.Faker;

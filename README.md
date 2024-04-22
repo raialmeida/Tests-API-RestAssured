@@ -40,6 +40,16 @@ mvn allure:serve
 ```
 docker-compose run --rm api-test mvn test
 ```
+6. Para executar os testes de acordo com o ambiente, utilize o seguinte comando:
+
+```
+mvn test -P dev
+```
+7. Para executar os testes de acordo com a tag, utilize o seguinte comando:
+
+```
+mvn test -Dgroups=Smoke
+```
 
 _Obs:. Poderá executar os testes via JUnit conforme sua IDE_
 ## Estrutura do Projeto

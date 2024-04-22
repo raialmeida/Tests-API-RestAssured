@@ -1,4 +1,4 @@
-package services.CadastroProdutos.tests;
+package Services.CadastroProdutos.tests;
 
 import static io.restassured.RestAssured.basePath;
 import static org.hamcrest.Matchers.equalTo;
@@ -6,9 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import Config.TestConfig;
+import Services.CadastroProdutos.payloads.CadastroProdutoPayloads;
+import Services.CadastroProdutos.requests.CadastroProdutoRequests;
 import Utils.SchemaValidator;
-import services.CadastroProdutos.payloads.CadastroProdutoPayloads;
-import services.CadastroProdutos.requests.CadastroProdutoRequests;
 
 @DisplayName("Testes da rota POST /produtos")
 public class CadastroProdutosTest extends TestConfig {
@@ -37,7 +37,7 @@ public class CadastroProdutosTest extends TestConfig {
 	@Test
 	@DisplayName("Validar schema json response cadastro de produtos")
 	public void validarJsonSchemaCadastroProduto() {
-		String schemaPath = "services/CadastroProdutos/schema/SchemaCadastroProduto.json";
+		String schemaPath = "Services/CadastroProdutos/schema/SchemaCadastroProduto.json";
 		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
 				.body(SchemaValidator.matchesSchema(schemaPath));
 	}

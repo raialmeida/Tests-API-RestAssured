@@ -1,4 +1,4 @@
-package services.CadastroUsuarios.requests;
+package Services.CadastroUsuarios.requests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

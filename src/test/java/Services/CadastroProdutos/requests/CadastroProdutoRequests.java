@@ -1,4 +1,4 @@
-package services.CadastroProdutos.requests;
+package Services.CadastroProdutos.requests;
 
 import Utils.UtilsUsuario;
 import io.restassured.RestAssured;

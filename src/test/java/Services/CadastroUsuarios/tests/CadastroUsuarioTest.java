@@ -1,9 +1,11 @@
 package Services.CadastroUsuarios.tests;
 
 import static io.restassured.RestAssured.basePath;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import Config.TestConfig;
 import Services.CadastroUsuarios.payloads.CadastroUsuarioPayloads;
 import Services.CadastroUsuarios.requests.CadastroUsuarioRequests;
@@ -21,6 +23,8 @@ public class CadastroUsuarioTest extends TestConfig {
 	@Test
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroUsuarios() {
-		CadastroUsuarioRequests.requestCadastroPost(payload).then().assertThat().statusCode(201);
+		CadastroUsuarioRequests.requestCadastroUsuarioPost(payload)
+				.assertThat()
+				.statusCode(201);
 	}
 }

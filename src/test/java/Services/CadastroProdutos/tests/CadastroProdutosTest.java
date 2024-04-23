@@ -2,10 +2,12 @@ package Services.CadastroProdutos.tests;
 
 import static io.restassured.RestAssured.basePath;
 import static org.hamcrest.Matchers.equalTo;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import Config.TestConfig;
 import Services.CadastroProdutos.payloads.CadastroProdutoPayloads;
 import Services.CadastroProdutos.requests.CadastroProdutoRequests;
@@ -25,22 +27,24 @@ public class CadastroProdutosTest extends TestConfig {
 	@Tag("Smoke")
 	@DisplayName("Validar cadastro com sucesso")
 	public void validarCadastroProduto() {
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
-				.assertThat().body("message", equalTo("Cadastro realizado com sucesso"));
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload)
+				.assertThat()
+				.body("message", equalTo("Cadastro realizado com sucesso"));
 	}
 
 	@Test
 	@DisplayName("Validar status code 201")
 	public void validarStatusCodeCadastroProduto() {
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
-				.assertThat().statusCode(201);
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload)
+				.assertThat()
+				.statusCode(201);
 	}
 
 	@Test
 	@DisplayName("Validar schema json response cadastro de produtos")
 	public void validarJsonSchemaCadastroProduto() {
 		String schemaPath = "Services/CadastroProdutos/schema/SchemaCadastroProduto.json";
-		CadastroProdutoRequests.requestCadastroProdutosPost(payload).then()
+		CadastroProdutoRequests.requestCadastroProdutosPost(payload)
 				.body(SchemaValidator.matchesSchema(schemaPath));
 	}
 }

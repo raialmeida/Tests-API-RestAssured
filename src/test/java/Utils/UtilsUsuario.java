@@ -1,5 +1,6 @@
 package Utils;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
@@ -16,16 +17,23 @@ public class UtilsUsuario {
 	 *
 	 * @return token
 	 */
+	@Step("Enviando requisição para obter o token do usuário")
 	public static String getToken() {
-		return RestAssured.given().contentType(ContentType.JSON).body(usuario).basePath("/login").post()
+		return RestAssured.given()
+				.contentType(ContentType.JSON)
+				.body(usuario)
+				.basePath("/login")
+				.post()
 				.jsonPath().getString("authorization");
 	}
 
-	/**
-	 * Cadastro o usuário antes dos testes porque precisa do token
-	 */
+	@Step("Cadastro o usuário antes dos testes para obter token")
 	public static void cadastrarUsuario() {
-		RestAssured.given().contentType(ContentType.JSON).body(payloadUsuario).basePath("/usuarios").post();
+		RestAssured.given()
+				.contentType(ContentType.JSON)
+				.body(payloadUsuario)
+				.basePath("/usuarios")
+				.post();
 
 	}
 }

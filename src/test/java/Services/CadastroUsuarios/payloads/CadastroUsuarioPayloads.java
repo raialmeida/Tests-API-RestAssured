@@ -5,7 +5,7 @@ import jakarta.json.*;
 
 public class CadastroUsuarioPayloads {
 
-	static String name = Faker.instance().name().toString();
+	static String name = Faker.instance().name().firstName();
 	static String email = Faker.instance().internet().emailAddress();
 	static String password = Faker.instance().internet().password();
 

@@ -1,7 +1,9 @@
 package Config;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+
 import org.junit.jupiter.api.BeforeAll;
+
 import Utils.Environment;
 import Utils.UtilsUsuario;
 import io.qameta.allure.restassured.AllureRestAssured;

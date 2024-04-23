@@ -1,8 +1,9 @@
 package Services.CadastroUsuarios.requests;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 public class CadastroUsuarioRequests {
 	/**
@@ -11,7 +12,12 @@ public class CadastroUsuarioRequests {
 	 * @param payload
 	 * @return Response da request
 	 */
-	public static Response requestCadastroPost(String payload) {
-		return RestAssured.given().contentType(ContentType.JSON).body(payload).post();
+	@Step("Enviando requisição para cadastro de usuários")
+	public static ValidatableResponse requestCadastroUsuarioPost(String payload) {
+		return RestAssured.given()
+				.contentType(ContentType.JSON)
+				.body(payload)
+				.post()
+				.then();
 	}
 }

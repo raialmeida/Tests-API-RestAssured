@@ -54,36 +54,36 @@ mvn test -Dgroups=Smoke
 _Obs:. Poderá executar os testes via JUnit conforme sua IDE_
 ## Estrutura do Projeto
 
-    📦 src
-      ┗ 📂 test
-         ┣ 📂 java
-         ┃ ┣ 📂 Config
-         ┃ ┃  ┗ 📜 TestConfig.java
-         ┃ ┣ 📂 Services
-         ┃ ┃ ┣ 📂 CadastroProdutos
-         ┃ ┃ ┃ ┣ 📂 payloads
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutoPayloads.java
-         ┃ ┃ ┃ ┣ 📂 requests
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutoRequests.java
-         ┃ ┃ ┃ ┣ 📂 schema
-         ┃ ┃ ┃ ┃  ┗ 📜 SchemaCadastroProduto.json
-         ┃ ┃ ┃ ┗ 📂 tests
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutosTest.java
-         ┃ ┃ ┣ 📂 CadastroUsuarios
-         ┃ ┃ ┃ ┣ 📂 payloads
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioPayloads.java
-         ┃ ┃ ┃ ┣ 📂 requests
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioRequests.java
-         ┃ ┃ ┃ ┗ 📂 tests
-         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioTest.java
-         ┃ ┗ 📂 Utils
-         ┃ ┃  ┣ 📜 Environment.java
-         ┃ ┃  ┣ 📜 SchemaValidator.java
-         ┃ ┃  ┗ 📜 UtilsUsuario.java
-         ┗ 📂 resources
-            ┣ 📜 dev.properties
-            ┣ 📜 hml.properties
-            ┗ 📜 prd.propertie
+    📦src
+      ┗ 📂test
+         ┣ 📂java
+         ┃ ┣ 📂Config
+         ┃ ┃  ┗📜TestConfig.java
+         ┃ ┣ 📂Services
+         ┃ ┃ ┣ 📂CadastroProdutos
+         ┃ ┃ ┃ ┣ 📂payloads
+         ┃ ┃ ┃ ┃  ┗📜CadastroProdutoPayloads.java
+         ┃ ┃ ┃ ┣ 📂requests
+         ┃ ┃ ┃ ┃  ┗📜CadastroProdutoRequests.java
+         ┃ ┃ ┃ ┣ 📂schema
+         ┃ ┃ ┃ ┃  ┗📜SchemaCadastroProduto.json
+         ┃ ┃ ┃ ┗ 📂tests
+         ┃ ┃ ┃ ┃  ┗📜CadastroProdutosTest.java
+         ┃ ┃ ┣ 📂CadastroUsuarios
+         ┃ ┃ ┃ ┣ 📂payloads
+         ┃ ┃ ┃ ┃  ┗📜CadastroUsuarioPayloads.java
+         ┃ ┃ ┃ ┣ 📂requests
+         ┃ ┃ ┃ ┃  ┗📜CadastroUsuarioRequests.java
+         ┃ ┃ ┃ ┗ 📂tests
+         ┃ ┃ ┃ ┃  ┗📜CadastroUsuarioTest.java
+         ┃ ┗ 📂Utils
+         ┃ ┃  ┣📜Environment.java
+         ┃ ┃  ┣📜SchemaValidator.java
+         ┃ ┃  ┗📜UtilsUsuario.java
+         ┗ 📂resources
+            ┣📜dev.properties
+            ┣📜hml.properties
+            ┗📜prd.propertie
 
  
 - `src/test/java/Config`: Código com as configurações dos testes.

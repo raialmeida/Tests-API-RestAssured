@@ -54,9 +54,43 @@ mvn test -Dgroups=Smoke
 _Obs:. Poderá executar os testes via JUnit conforme sua IDE_
 ## Estrutura do Projeto
 
-- `src/test/java`: Código-fonte dos testes.
+    📦 src
+      ┗ 📂 test
+         ┣ 📂 java
+         ┃ ┣ 📂 Config
+         ┃ ┃  ┗ 📜 TestConfig.java
+         ┃ ┣ 📂 Services
+         ┃ ┃ ┣ 📂 CadastroProdutos
+         ┃ ┃ ┃ ┣ 📂 payloads
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutoPayloads.java
+         ┃ ┃ ┃ ┣ 📂 requests
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutoRequests.java
+         ┃ ┃ ┃ ┣ 📂 schema
+         ┃ ┃ ┃ ┃  ┗ 📜 SchemaCadastroProduto.json
+         ┃ ┃ ┃ ┗ 📂 tests
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroProdutosTest.java
+         ┃ ┃ ┣ 📂 CadastroUsuarios
+         ┃ ┃ ┃ ┣ 📂 payloads
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioPayloads.java
+         ┃ ┃ ┃ ┣ 📂 requests
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioRequests.java
+         ┃ ┃ ┃ ┗ 📂 tests
+         ┃ ┃ ┃ ┃  ┗ 📜 CadastroUsuarioTest.java
+         ┃ ┗ 📂 Utils
+         ┃ ┃  ┣ 📜 Environment.java
+         ┃ ┃  ┣ 📜 SchemaValidator.java
+         ┃ ┃  ┗ 📜 UtilsUsuario.java
+         ┗ 📂 resources
+            ┣ 📜 dev.properties
+            ┣ 📜 hml.properties
+            ┗ 📜 prd.propertie
+
+ 
+- `src/test/java/Config`: Código com as configurações dos testes.
+- `src/test/java/Services`: Pasta que contém os serviços separado por pasta e cada serviços tem suas pastas separada por atribuição.
+- `src/test/java/Utils`: Contém arquivo de configuração de variveis de ambiente e utilitários dos testes. 
 - `pom.xml`: Arquivo de configuração do Maven.
--  `target`: Pasta que vão armazenar reports do testes.
+- `target`: Pasta criada na execução que vão armazenar reports do testes.
 
 ## Contribuição
 

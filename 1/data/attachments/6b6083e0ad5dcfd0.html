@@ -1,0 +1,31 @@
+<div>POST to https://serverest.dev/produtos</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;nome&quot;: &quot;Awesome Linen Watch&quot;,
+    &quot;descricao&quot;: &quot;Mouse&quot;,
+    &quot;quantidade&quot;: &quot;381&quot;,
+    &quot;preco&quot;: 470
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhdGVzdGVAcWEuY29tLmJyIiwicGFzc3dvcmQiOiJ0ZXN0ZSIsImlhdCI6MTcyNTE0Mzc1OCwiZXhwIjoxNzI1MTQ0MzU4fQ.cO_hPxt_xL0YaYR-zmqlAD_ihEB5pV8hMuSUf8bVmok</div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://serverest.dev/produtos&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhdGVzdGVAcWEuY29tLmJyIiwicGFzc3dvcmQiOiJ0ZXN0ZSIsImlhdCI6MTcyNTE0Mzc1OCwiZXhwIjoxNzI1MTQ0MzU4fQ.cO_hPxt_xL0YaYR-zmqlAD_ihEB5pV8hMuSUf8bVmok&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;nome&quot;: &quot;Awesome Linen Watch&quot;,
+    &quot;descricao&quot;: &quot;Mouse&quot;,
+    &quot;quantidade&quot;: &quot;381&quot;,
+    &quot;preco&quot;: 470
+}&#39;
+</div>

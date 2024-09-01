@@ -2,6 +2,8 @@
 
 Este projeto é um exemplo de como usar RestAssured com JUnit em um projeto Maven para testar serviços REST.
 
+Para visualizar o report allure [clique aqui](https://raialmeida.github.io/Tests-API-RestAssured/)
+
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter o seguinte instalado:

@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"84a9e8c425f96cb2b04db079e009a4ca","name":"Testes da rota POST /produtos","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}},{"uid":"190795f11474483725ce13d0525b1cdb","name":"Testes da rota POST /usuarios","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

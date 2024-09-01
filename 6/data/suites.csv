@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Sep 01 01:20:21 GMT 2024","Sun Sep 01 01:20:21 GMT 2024","149","","Testes da rota POST /usuarios","","Services.CadastroUsuarios.tests.CadastroUsuarioTest","validarStatusCodeCadastroUsuarios","Validar status code 201",""
+"passed","Sun Sep 01 01:20:19 GMT 2024","Sun Sep 01 01:20:20 GMT 2024","1319","","Testes da rota POST /produtos","","Services.CadastroProdutos.tests.CadastroProdutosTest","validarJsonSchemaCadastroProduto","Validar schema json response cadastro de produtos",""
+"passed","Sun Sep 01 01:20:20 GMT 2024","Sun Sep 01 01:20:20 GMT 2024","154","","Testes da rota POST /produtos","","Services.CadastroProdutos.tests.CadastroProdutosTest","validarStatusCodeCadastroProduto","Validar status code 201",""
+"passed","Sun Sep 01 01:20:20 GMT 2024","Sun Sep 01 01:20:20 GMT 2024","181","","Testes da rota POST /produtos","","Services.CadastroProdutos.tests.CadastroProdutosTest","validarCadastroProduto","Validar cadastro com sucesso",""

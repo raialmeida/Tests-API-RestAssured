@@ -8,7 +8,7 @@ Para visualizar o report allure [clique aqui](https://raialmeida.github.io/Tests
 
 Antes de começar, certifique-se de ter o seguinte instalado:
 
-- [Java Development Kit (JDK)](https://www.oracle.com/br/java/technologies/downloads/)
+- [Java Development Kit (JDK), versão 17 ou superior](https://www.oracle.com/br/java/technologies/downloads/)
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
 ## Configuração

@@ -45,6 +45,11 @@ jobs:
           gh_pages: gh-pages
           allure_history: allure-history
           allure_results: allure-results
+        env:
+            BRANCH_NAME: ${{ env.BRANCH_NAME }}
+            ACTOR_NAME: ${{ env.ACTOR_NAME }}
+            COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}
+            RUN_ID: ${{ env.RUN_ID }}
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3

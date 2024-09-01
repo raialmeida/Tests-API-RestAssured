@@ -46,10 +46,8 @@ jobs:
           allure_history: allure-history
           allure_results: allure-results
         env:
-            BRANCH_NAME: ${{ env.BRANCH_NAME }}
-            ACTOR_NAME: ${{ env.ACTOR_NAME }}
-            COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}
-            RUN_ID: ${{ env.RUN_ID }}
+            ACTOR_NAME:  ${{ github.event.pull_request.user.login }}
+            COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
@@ -58,3 +56,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: report-allure
           publish_dir: allure-history
+        env:
+            ACTOR_NAME:  ${{ github.event.pull_request.user.login }}
+            COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+            BRANCH_NAME: ${{ env.BRANCH_NAME }}

@@ -1,9 +1,7 @@
 package Services.CadastroProdutos.tests;
 
-import static io.restassured.RestAssured.basePath;
 import static org.hamcrest.Matchers.equalTo;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,20 +10,22 @@ import Config.TestConfig;
 import Services.CadastroProdutos.payloads.CadastroProdutoPayloads;
 import Services.CadastroProdutos.requests.CadastroProdutoRequests;
 import Utils.SchemaValidator;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Severity;
+import static io.qameta.allure.SeverityLevel.*;
 
 @DisplayName("Testes da rota POST /produtos")
+@Feature("Cadastro de Produtos")
 public class CadastroProdutosTest extends TestConfig {
 
 	String payload = CadastroProdutoPayloads.payloadCadastroProduto();
 
-	@BeforeEach
-	public void before() {
-		basePath = "/produtos";
-	}
-
 	@Test
 	@Tag("Smoke")
 	@DisplayName("Validar cadastro com sucesso")
+	@Severity(CRITICAL)
+	@Issue("345456")
 	public void validarCadastroProduto() {
 		CadastroProdutoRequests.requestCadastroProdutosPost(payload)
 				.assertThat()

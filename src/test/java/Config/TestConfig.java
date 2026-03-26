@@ -24,4 +24,11 @@ public class TestConfig {
 		baseURI = Environment.getEnv("baseURI");
 		UtilsUsuario.cadastrarUsuario();
 	}
+
+	@BeforeAll
+	public static void setupAllure() {
+		// A propriedade deve ser definida antes da execução dos testes
+		System.setProperty("allure.link.issue.pattern", "https://jira.seu-dominio.com/browse/{}");
+		System.setProperty("allure.link.tms.pattern", "https://testrail.seu-dominio.com/cases/view/{}");
+	}
 }

@@ -17,7 +17,7 @@ public class CadastroUsuarioRequests {
 		return RestAssured.given()
 				.contentType(ContentType.JSON)
 				.body(payload)
-				.post()
+				.post("/usuarios")
 				.then();
 	}
 }

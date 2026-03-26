@@ -13,10 +13,10 @@
 		<junit.version>5.11.0</junit.version>
 		<restassured.version>5.3.2</restassured.version>
 		<javafaker.version>1.0.2</javafaker.version>
-		<allure.version>2.29.0</allure.version>
+		<allure.version>2.33.0</allure.version>
 		<slf4j.version>2.0.13</slf4j.version>
 		<jakartajson.version>2.0.1</jakartajson.version>
-		<allure.maven.version>2.12.0</allure.maven.version>
+		<allure.maven.version>2.17.0</allure.maven.version>
 		<maven.compiler.version>3.11.0</maven.compiler.version>
 		<maven.surefire.version>3.2.1</maven.surefire.version>
 		<java.version>${java.specification.version}</java.version>
@@ -107,6 +107,7 @@
 				<configuration>
 					<resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
 					<reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+					 <reportVersion>${allure.version}</reportVersion>
 				</configuration>
 			</plugin>
 			<plugin>

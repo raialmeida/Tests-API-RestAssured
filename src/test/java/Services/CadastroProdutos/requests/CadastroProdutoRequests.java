@@ -22,7 +22,7 @@ public class CadastroProdutoRequests {
 				.contentType(ContentType.JSON)
 				.header("Authorization", token)
 				.body(payload)
-				.post()
+				.post("/produtos")
 				.then();
 	}
 }

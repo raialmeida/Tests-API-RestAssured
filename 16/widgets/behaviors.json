@@ -1,1 +1,1 @@
-{"total":0,"items":[]}
+{"total":2,"items":[{"uid":"89f18581fc041d1a29f7abaaadb62429","name":"Cadastro de Produtos","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}},{"uid":"03064b0bf50b319f0a575745cc951908","name":"Cadastro de Usuarios","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

@@ -5,17 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-
-import Utils.Environment;
-import Utils.UtilsUsuario;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 
 public class TestConfig {
 
 	static {
+
 		// Configuração global para Allure
 		RestAssured.filters(new AllureRestAssured());
 
@@ -23,14 +19,7 @@ public class TestConfig {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 	}
 
-	@BeforeEach
-	public void setup() {
-		RestAssured.baseURI = Environment.getEnv("baseURI");
-		UtilsUsuario.cadastrarUsuario();
-	}
-
-	@BeforeAll
-	public static void setupAllure() {
+	public static void propertyAllure() {
 
 		System.setProperty("allure.link.issue.pattern", "https://jira.seu-dominio.com/browse/{}");
 		System.setProperty("allure.link.tms.pattern", "https://testrail.seu-dominio.com/cases/view/{}");

@@ -1,9 +1,12 @@
 package Utils;
 
+import Config.requestBase;
 import Services.CadastroUsuarios.payloads.CadastroUsuarioPayloads;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import jakarta.json.Json;
 
 public class UtilsUsuario {
 
@@ -12,7 +15,10 @@ public class UtilsUsuario {
 			"rateste@qa.com.br",
 			"teste");
 
-	static String usuario = "{\r\n" + "  \"email\": \"rateste@qa.com.br\",\r\n" + "  \"password\": \"teste\"\r\n" + "}";
+	static String usuario = Json.createObjectBuilder()
+			.add("email", "rateste@qa.com.br")
+			.add("password", "teste")
+			.build().toString();
 
 	/**
 	 * Retorna o token do usuário
@@ -21,7 +27,7 @@ public class UtilsUsuario {
 	 */
 	@Step("Enviando requisição para obter o token do usuário")
 	public static String getToken() {
-		return RestAssured.given()
+		return RestAssured.given().spec(requestBase.reqSpec)
 				.contentType(ContentType.JSON)
 				.body(usuario)
 				.basePath("/login")
@@ -30,8 +36,8 @@ public class UtilsUsuario {
 	}
 
 	@Step("Cadastro o usuário antes dos testes para obter token")
-	public static void cadastrarUsuario() {
-		RestAssured.given()
+	public static Response cadastrarUsuario() {
+		return RestAssured.given().spec(requestBase.reqSpec)
 				.contentType(ContentType.JSON)
 				.body(userPayload)
 				.basePath("/usuarios")

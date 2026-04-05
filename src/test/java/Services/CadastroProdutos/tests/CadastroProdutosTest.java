@@ -1,23 +1,24 @@
 package Services.CadastroProdutos.tests;
 
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import Config.TestConfig;
+import Config.hooks;
 import Services.CadastroProdutos.payloads.CadastroProdutoPayloads;
 import Services.CadastroProdutos.requests.CadastroProdutoRequests;
 import Utils.SchemaValidator;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Severity;
-import static io.qameta.allure.SeverityLevel.*;
+import io.qameta.allure.TmsLink;
 
 @DisplayName("Testes da rota POST /produtos")
 @Feature("Cadastro de Produtos")
-public class CadastroProdutosTest extends TestConfig {
+public class CadastroProdutosTest extends hooks{
 
 	String payload = CadastroProdutoPayloads.payloadCadastroProduto();
 
@@ -26,6 +27,7 @@ public class CadastroProdutosTest extends TestConfig {
 	@DisplayName("Validar cadastro com sucesso")
 	@Severity(CRITICAL)
 	@Issue("345456")
+	@TmsLink("TMS-456")
 	public void validarCadastroProduto() {
 		CadastroProdutoRequests.requestCadastroProdutosPost(payload)
 				.assertThat()

@@ -5,6 +5,7 @@ import Services.CadastroUsuarios.payloads.CadastroUsuarioPayloads;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import jakarta.json.Json;
 
 public class UtilsUsuario {
@@ -35,8 +36,8 @@ public class UtilsUsuario {
 	}
 
 	@Step("Cadastro o usuário antes dos testes para obter token")
-	public static void cadastrarUsuario() {
-		RestAssured.given().spec(requestBase.reqSpec)
+	public static Response cadastrarUsuario() {
+		return RestAssured.given().spec(requestBase.reqSpec)
 				.contentType(ContentType.JSON)
 				.body(userPayload)
 				.basePath("/usuarios")

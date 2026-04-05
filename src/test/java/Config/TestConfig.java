@@ -10,7 +10,7 @@ import io.restassured.RestAssured;
 
 public class TestConfig {
 
-	public static void configAllure() {
+	static {
 
 		// Configuração global para Allure
 		RestAssured.filters(new AllureRestAssured());

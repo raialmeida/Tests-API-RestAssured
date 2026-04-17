@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2017","Validar status code 201","","Fri Apr 17 18:34:14 UTC 2026","passed","Fri Apr 17 18:34:16 UTC 2026","","Testes da rota POST /usuarios","Services.CadastroUsuarios.tests.CadastroUsuarioTest","validarStatusCodeCadastroUsuarios"
+"","1420","Validar schema json response cadastro de produtos","","Fri Apr 17 18:34:16 UTC 2026","passed","Fri Apr 17 18:34:18 UTC 2026","","Testes da rota POST /produtos","Services.CadastroProdutos.tests.CadastroProdutosTest","validarJsonSchemaCadastroProduto"
+"","119","Validar status code 201","","Fri Apr 17 18:34:18 UTC 2026","passed","Fri Apr 17 18:34:18 UTC 2026","","Testes da rota POST /produtos","Services.CadastroProdutos.tests.CadastroProdutosTest","validarStatusCodeCadastroProduto"
+"","172","Validar cadastro com sucesso","","Fri Apr 17 18:34:18 UTC 2026","passed","Fri Apr 17 18:34:18 UTC 2026","","Testes da rota POST /produtos","Services.CadastroProdutos.tests.CadastroProdutosTest","validarCadastroProduto"

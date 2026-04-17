@@ -4,7 +4,7 @@ import Utils.Environment;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
-public class requestBase {
+public class RequestBase {
 
     public static RequestSpecification reqSpec;
 

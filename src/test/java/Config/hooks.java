@@ -6,13 +6,13 @@ import org.junit.jupiter.api.BeforeEach;
 import Utils.UtilsUsuario;
 import io.restassured.response.Response;
 
-public class hooks {
+public class Hooks {
 
     protected static Response usuario;
 
     @BeforeAll
     public static void setupAllure() {
-        requestBase.baseRequest();
+        RequestBase.baseRequest();
     }
 
     @BeforeEach

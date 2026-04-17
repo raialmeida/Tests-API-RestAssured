@@ -1,6 +1,6 @@
 package Utils;
 
-import Config.requestBase;
+import Config.RequestBase;
 import Services.CadastroUsuarios.payloads.CadastroUsuarioPayloads;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
@@ -27,7 +27,7 @@ public class UtilsUsuario {
 	 */
 	@Step("Enviando requisição para obter o token do usuário")
 	public static String getToken() {
-		return RestAssured.given().spec(requestBase.reqSpec)
+		return RestAssured.given().spec(RequestBase.reqSpec)
 				.contentType(ContentType.JSON)
 				.body(usuario)
 				.basePath("/login")
@@ -37,7 +37,7 @@ public class UtilsUsuario {
 
 	@Step("Cadastro o usuário antes dos testes para obter token")
 	public static Response cadastrarUsuario() {
-		return RestAssured.given().spec(requestBase.reqSpec)
+		return RestAssured.given().spec(RequestBase.reqSpec)
 				.contentType(ContentType.JSON)
 				.body(userPayload)
 				.basePath("/usuarios")

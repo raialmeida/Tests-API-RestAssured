@@ -1,12 +1,12 @@
 package Services.CadastroUsuarios.requests;
 
-import Config.requestBase;
+import Config.RequestBase;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 
-public class CadastroUsuarioRequests extends requestBase {
+public class CadastroUsuarioRequests extends RequestBase {
 	/**
 	 * Request POST cadastro de usuários
 	 *

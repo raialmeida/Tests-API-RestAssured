@@ -3,7 +3,7 @@ package Services.CadastroUsuarios.tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import Config.hooks;
+import Config.Hooks;
 import Services.CadastroUsuarios.payloads.CadastroUsuarioPayloads;
 import Services.CadastroUsuarios.requests.CadastroUsuarioRequests;
 import io.qameta.allure.Feature;
@@ -11,7 +11,7 @@ import io.qameta.allure.Issue;
 
 @DisplayName("Testes da rota POST /usuarios")
 @Feature("Cadastro de Usuarios")
-public class CadastroUsuarioTest extends hooks {
+public class CadastroUsuarioTest extends Hooks {
 
 	String payload = CadastroUsuarioPayloads.payloadCadastroUsuario();
 

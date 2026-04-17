@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import Config.hooks;
+import Config.Hooks;
 import Services.CadastroProdutos.payloads.CadastroProdutoPayloads;
 import Services.CadastroProdutos.requests.CadastroProdutoRequests;
 import Utils.SchemaValidator;
@@ -18,7 +18,7 @@ import io.qameta.allure.TmsLink;
 
 @DisplayName("Testes da rota POST /produtos")
 @Feature("Cadastro de Produtos")
-public class CadastroProdutosTest extends hooks{
+public class CadastroProdutosTest extends Hooks{
 
 	String payload = CadastroProdutoPayloads.payloadCadastroProduto();
 

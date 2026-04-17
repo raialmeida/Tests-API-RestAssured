@@ -1,13 +1,13 @@
 package Services.CadastroProdutos.requests;
 
-import Config.requestBase;
+import Config.RequestBase;
 import Utils.UtilsUsuario;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 
-public class CadastroProdutoRequests extends requestBase {
+public class CadastroProdutoRequests extends RequestBase {
 
 	static String token = UtilsUsuario.getToken();
 

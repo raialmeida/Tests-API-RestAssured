@@ -18,7 +18,7 @@ import io.qameta.allure.TmsLink;
 
 @DisplayName("Testes da rota POST /produtos")
 @Feature("Cadastro de Produtos")
-public class CadastroProdutosTest extends Hooks{
+public class CadastroProdutosTest extends Hooks {
 
 	String payload = CadastroProdutoPayloads.payloadCadastroProduto();
 

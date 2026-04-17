@@ -8,4 +8,5 @@ WORKDIR /app
 COPY ./pom.xml /app
 
 # Copie o código de teste para o contêiner
-COPY . /app
+COPY pom.xml /app/pom.xml
+COPY src /app/src

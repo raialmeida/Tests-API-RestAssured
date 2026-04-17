@@ -1,4 +1,5 @@
 ## Descrição
+[![Tests API CI](https://github.com/raialmeida/Tests-API-RestAssured/actions/workflows/api-test-ci.yml/badge.svg)](https://github.com/raialmeida/Tests-API-RestAssured/actions/workflows/api-test-ci.yml)
 
 Este projeto é um exemplo de como usar RestAssured com JUnit em um projeto Maven para testar serviços REST.
 
